@@ -1,0 +1,227 @@
+/* 地图导航工具条 */
+/*.toolBar {font-size:1px; width:73px; height:250px;position: absolute; top:10px; left:15px; z-index:888;}*/
+.toolBar {font-size:1px; width:73px; height:250px;position: absolute; top:40px; left:10px; z-index:888;}
+.toolBar_button {width:42px; height:42px; background-image:url(../../Content/images/map/MapSlider/mapNav.png);background-position:0px 0px; background-repeat:no-repeat;}
+.toolBar_button_Nover {width:42px; height:42px; background-image:url(../../Content/images/map/MapSlider/mapNav.png);background-position:0px -44px; background-repeat:no-repeat;}
+.toolBar_button_Sover {width:42px; height:42px; background-image:url(../../Content/images/map/MapSlider/mapNav.png);background-position:0px -132px; background-repeat:no-repeat;}
+.toolBar_button_Wover {width:42px; height:42px; background-image:url(../../Content/images/map/MapSlider/mapNav.png);background-position:0px -176px; background-repeat:no-repeat;}
+.toolBar_button_Eover {width:42px; height:42px; background-image:url(../../Content/images/map/MapSlider/mapNav.png);background-position:0px -88px; background-repeat:no-repeat;}
+.toolBar_button_north {background-image:url(); background-repeat:no-repeat; cursor:pointer; width:10px; height:14px; margin-left:17px;}
+.toolBar_button_south {background-image:url(); background-repeat:no-repeat; cursor:pointer; width:10px; height:18px; margin-left:17px;}
+.toolBar_button_west {background-image:url(); background-repeat:no-repeat; cursor:pointer; width:14px; height:10px; float:left;}
+.toolBar_button_east {background-image:url(); background-repeat:no-repeat; cursor:pointer; width:10px; height:10px; float:left;}
+.toolBar_button_center {background-image:url();background-repeat:no-repeat; cursor:pointer; width:13px; height:12px; float:left;}
+
+
+.toolBar_slider {width:21px; margin-top:5px; margin-left:9px; float:left;display:inline;}
+.toolBar_slider_zoomIn {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:3px -220px; background-repeat:no-repeat; cursor:pointer; width:26px; height:20px;}
+.toolBar_slider_zoomOut {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:3px -265px; background-repeat:no-repeat; cursor:pointer; width:26px; height:20px;}
+.toolBar_slider_ticks {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:-28px -233px; background-repeat:no-repeat; cursor:pointer; width:7px;height:130px; position:relative;left:10px;}
+.toolBar_slider_ticksSel {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:-36px -233px; background-repeat:no-repeat; cursor:pointer; width:7px;height:130px; position:absolute; bottom:0px;}
+.toolBar_slider_float_nonactivated {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:0px -309px; background-repeat:no-repeat; cursor:pointer; width:18px; height:10px; position:absolute; z-index:2001;left:-6px; bottom:0px;}
+.toolBar_slider_float_activated {background-image:url(../../Content/images/map/MapSlider/mapNav.png); background-position:0px -320px; background-repeat:no-repeat; cursor:pointer; width:18px; height:10px; position:absolute;  z-index:2001;left:-6px; bottom:0px;}
+
+.toolBar_mark {width:27px; margin-top:22px; float:left; display:inline; position:relative;}
+.toolBar_mark:hover{display:none;}
+.toolBar_mark_street {position:absolute; background-image:url(../../Content/images/map/MapSlider/mark.png); background-position:0px 0px; background-repeat:no-repeat; cursor:pointer; width:27px; height:18px; top:0px;}
+.toolBar_mark_city {position:absolute; background-image:url(../../Content/images/map/MapSlider/mark.png); background-position:0px -20px; background-repeat:no-repeat; cursor:pointer; width:27px; height:18px; top:0px;}
+.toolBar_mark_province {position:absolute; background-image:url(../../Content/images/map/MapSlider/mark.png); background-position:0px -40px; background-repeat:no-repeat; cursor:pointer; width:27px; height:18px; top:0px;}
+.toolBar_mark_country {position:absolute; background-image:url(../../Content/images/map/MapSlider/mark.png); background-position:0px -60px; background-repeat:no-repeat; cursor:pointer; width:27px; height:18px; top:0px;}
+/* 地图切换标签 */
+.maplabel_container{
+	position: absolute; left: auto; right: 20px; z-index: 700; top: 5px; bottom: auto;
+}
+.maplabel_split{
+	width:2px; height:32px; background-image:url(../../Content/images/map/MapLabel/split1.png); float:left;
+}
+.maplabel_xianhua_container{
+	cursor:pointer;  float:left;
+}
+.maplabel_xianhua_label{
+	width:63px; height:32px; background-image:url(../../Content/images/map/MapLabel/xianhua1.png); float:left;
+}
+.maplabel_xianhua_label_selected{
+	width:63px; height:32px; background-image:url(../../images/map/MapLabel/xianhua2.png); float:left;
+}
+.maplabel_yingxiang_container{
+	cursor:pointer;  float:left;
+}
+.maplabel_yingxiang_label{
+	width:52px; height:32px; background-image:url(../../Content/images/map/MapLabel/yingxiang1.png); float:left;
+}
+.maplabel_yingxiang_label_selected{
+	width:52px; height:32px; background-image:url(../../Content/images/map/MapLabel/yingxiang2.png); float:left;
+}
+.maplabel_sanwei_container{
+	cursor:pointer;  float:left;
+}
+.maplabel_sanwei_label{
+	width:59px; height:32px; background-image:url(../../Content/images/map/MapLabel/sanwei1.png); float:left;
+}
+.maplabel_sanwei_label_selected{
+	width:59px; height:32px; background-image:url(../../Content/images/map/MapLabel/sanwei2.png); float:left;
+}
+/* 地图比例尺 */
+/*.map-scalebar {z-index:2000;position: absolute;left: 5px;bottom: 25px;width:80px;height: 20px;overflow: hidden;background-image: url(../../images/map/MapScale/map_scalebar.gif);background-repeat: no-repeat;background-position: left bottom;text-indent: 5px;}*/
+.map-scalebar {z-index:888;position: absolute;left: 380px;bottom:5px;width:80px;height: 20px;overflow: hidden;background-image: url(../../images/map/MapScale/map_scalebar.gif);background-repeat: no-repeat;background-position: left bottom;text-indent: 5px;}
+/* 地图版权信息 */
+.map-copyright {z-index:888;position: absolute;right: 680px;bottom: 5px;width:323px;height:auto;overflow: hidden;text-align:center;}
+/* 显示当前坐标 */
+.map-coordinates{z-index:888;position: absolute;left: 470px;bottom: 5px;width:323px;height:auto;overflow: hidden;text-align:center;}
+/* 地图图例 */
+.map-legend{z-index:888;position: absolute;right: 10px;bottom: 152px;width:300px;height:451px;overflow: hidden;text-align:center;background: url(../../images/map/index/maplend2.png) no-repeat;}
+/*右键菜单*/
+.map_contextmenu{background: none repeat scroll 0 0 #FFFFFF;border-color: #ADBFE4 #8BA4D8 #8BA4D8 #ADBFE4;border-style: solid;border-width: 1px;margin: 0;padding: 0;position: absolute;width: auto;z-index: 10000000;font: 12px arial,simsun;cursor: -moz-grab; visibility: visible;}
+.map_divider{border-bottom: 1px solid #ADBFE4;font-size: 0;margin: 0 6px;padding: 0px;width: 90px;}
+.map_contextmenu_item{padding: 2px 6px; margin: 0pt 2px; font-size: 12px; -moz-user-select: none; line-height: 17px; width: 90px; color: rgb(0, 0, 0); cursor: pointer;} 
+.map_contextmenu_icon{float:left;width:19px;height:18px;}
+
+/*------------地图标签样式------------*/
+ /*标签正常样式*/
+.map-label-item
+{
+	float: left;cursor: pointer;text-align: center;width: 80px;height: 32px;background-image: url(../../images/map/MapLabel/label.png);
+}
+/*标签选择或经过样式*/
+.map-label-item-select
+{
+	float: left;cursor: pointer;text-align: center;width: 80px;height: 32px;background-image: url(../../images/map/MapLabel/label_selected.png);
+}
+/*标签左边样式*/
+.map-label-item-left
+{
+	float: left;width: 7px;height: 32px;background-image: url(../../Content/images/map/MapLabel/left.png);
+}
+/*标签右边样式*/
+.map-label-item-right
+{
+	float: left;width: 2px;height: 32px;background-image: url(../../Content/images/map/MapLabel/right.png);
+}
+/*标签文字样式*/
+.map-label-item-text
+{
+	padding-top: 7px;font-family: '微软雅黑';font-size: 12px;height: 27px;
+}
+/*标签之间的分隔样式*/
+.map-label-item-split
+{
+	float:left; background-image:url(../../Content/images/map/MapLabel/split.png); width:2px; height:32px;
+}
+
+/*菜单 position: absolute;*/
+ .map-label-item-menu
+{
+	display:none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #ADBFE4 #8BA4D8 #8BA4D8 #ADBFE4;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0;
+    padding: 0;  
+    z-index: 10000000;
+    font: 12px arial,simsun;
+    cursor: -moz-grab; 
+	visibility: visible;                        
+}
+/*菜单分隔*/
+.map-label-item-menu-divider
+{
+    border-bottom: 1px solid #ADBFE4;font-size: 0;margin: 0 4px;padding: 1px;  
+}
+/*菜单项width: 55px;*/
+.map-label-item-menu-divider
+{
+	padding: 2px 4px; margin: 0pt 2px; font-size: 12px; -moz-user-select: none; line-height: 17px;  color: rgb(0, 0, 0); cursor: pointer;
+} 
+/*------------end地图标签样式------------*/
+
+/*底图切换控件*/
+.map_switch {
+    position:absolute;
+    right:10px;
+    /*top:15px;*/
+    top:40px;
+    font-family:"宋体";
+    font-size:12px;
+    width:70px;
+    /*height: 57px;
+    z-index:1100;
+    background-color:white;*/
+}
+.map_3D_switch {
+    position:absolute;
+    right:10px;
+    top:100px;
+    font-family:"宋体";
+    font-size:12px;
+    height: 57px;
+    /*z-index:1100;*/
+}
+.map_switch_item {
+    width: 58px;
+    height: 60px;
+    border: 1px solid #b1b1b1;
+    text-align: center;
+    float: right;
+    display: inline;
+    margin-left: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.hoverType:hover {
+    width: 56px;
+    height: 58px;
+    background-color: #c6e0f7;
+    margin: auto;
+}
+
+.hoverType {
+    width: 56px;
+    height: 58px;
+    background-color: #fff;
+    margin: auto;
+}
+.vecType {
+    width: 56px;
+    height: 38px;
+    background: url(../../Content/images/map/index/indexImage.png) no-repeat -154px -202px;
+}
+
+.imgType {
+    width: 56px;
+    height: 38px;
+    background: url(../../Content/images/map/index/indexImage.png) no-repeat -154px -155px;
+}
+
+.terType {
+    width: 56px;
+    height: 38px;
+    background: url(../../Content/images/map/index/indexImage.png) no-repeat -86px -202px;
+}
+.d25Type {
+    width: 56px;
+    height: 38px;
+    background: url(../../Content/images/map/index/indexImage.png) no-repeat -220px -202px;
+}
+.glbType {
+    width: 56px;
+    height: 38px;
+    background: url(../../Content/images/map/index/indexImage.png) no-repeat -86px -155px;
+}
+
+.map_bom {
+    height:22px;
+    line-height:22px;
+    color: #333333;
+}
+/*重构esri气泡窗口标题样式*/
+.esriPopup .titlePane {
+    background-color: #30A4D5;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding-left: 6px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    cursor: default;
+}
